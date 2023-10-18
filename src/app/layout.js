@@ -21,9 +21,7 @@ export default function RootLayout({ children }) {
     const getTitle = async () => {
       let config = {
         method: 'get',
-        maxBodyLength: Infinity,
-        url: 'https://staging.fundexpert.in/app/user?action=getIfaDetail&url=https://ifa.fundexpert.net',
-        cache: 'no-store'
+        url: `https://www.fundexpert.in/app/user?action=getIfaDetail&url=${window.location.origin}`,
       };
 
       axios.request(config)
@@ -60,7 +58,6 @@ export default function RootLayout({ children }) {
           <ErrorComponent />
         }
         <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" async />
-        <Script src="https://www.google.com/recaptcha/api.js?render=6Lc7obgmAAAAAHTuQ31XGA43JVmFFD0NwkZ3Txcx" async />
         <Script src="https://www.fundexpert.in/assets/js/validator.js" async />
       </body>
     </html>
