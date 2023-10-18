@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
     const getTitle = async () => {
       let config = {
         method: 'get',
-        url: `https://www.fundexpert.in/app/user?action=getIfaDetail&url=${window.location.origin}`,
+        url: `https://www.fundexpert.in/app/user?action=getIfaDetail&url=https://ifa.fundexpert.net`,
       };
 
       axios.request(config)
